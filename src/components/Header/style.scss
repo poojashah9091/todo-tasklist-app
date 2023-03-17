@@ -1,0 +1,41 @@
+
+.headerContainer{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 5px -17px 20px 7px #5454ff;
+    .logoContainer{
+        align-self: center;
+        .logo{
+            height: 55px;
+            width: 55px;
+        }
+    }
+    .CTAContainer{
+        align-self: center;
+        .primaryCTA{
+            color: white;
+            height: 30px;
+            margin: 10px;
+            background-color: #5454ff;
+            border: 1px solid #5454ff;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .secondaryCTA{
+            height: 30px;
+            margin: 10px;
+            background-color: white;
+            color: #5454ff;
+            border: 1px solid #5454ff;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

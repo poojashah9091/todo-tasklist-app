@@ -1,4 +1,14 @@
 .tasksheetContainer{
     height: 84%;
     margin: 20px;
+
+    .loader{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+
+    .errorMessage{
+        color: red;
+    }
 }

@@ -1,0 +1,113 @@
+.taskItemCardContainer{
+    box-shadow: 20px 5px 20px 0px #f2f2f4;
+    min-height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  .taskItemData{
+    display: flex;
+    align-items: center;
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 28px;
+        font-size: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        min-height: 20px;
+        width: 100%;
+        padding: 4px 4px 4px 28px;
+        pointer-events: none;
+        border: none;
+    }
+    
+    // Label container
+    .label{
+        color: #555555;
+        padding: 0px 10px 0px 10px;
+        display: block;
+        text-align: justify;
+    }
+    
+    // Hide the browser's default checkbox 
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+      
+    // Create a custom checkbox 
+    .checkmark {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+        background-color: #eee;
+        pointer-events: all;
+        cursor: pointer;
+    
+    }
+      
+    // On mouse-over, add a grey background color 
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+      
+    // When the checkbox is checked, add a blue background 
+    .container input:checked ~ .checkmark {
+        background-color: #5454ff;
+    }
+    
+    // Strike-through on the task desc
+    .container input:checked ~ .label {
+        text-decoration: line-through;
+    }
+      
+    // Create the checkmark/indicator (hidden when not checked) 
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+      
+    // Show the checkmark when checked 
+    .container input:checked ~ .checkmark:after {
+        display: block; 
+    }
+      
+    // Style the checkmark/indicator 
+    .container .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-radius: 1px;
+    }
+  }  
+    
+  .taskItemCTA{
+    display: flex;
+
+    .iconsContainer svg{
+        margin: 5px;
+        color: #5454ff;
+        font-size: 1.2rem;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+  } 
+}

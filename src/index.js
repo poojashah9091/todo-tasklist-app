@@ -11,11 +11,11 @@ import { customTheme } from './utils/theme';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={customTheme}>
-  <Provider store={store}>
-    {/* <React.StrictMode> */}
-      <App />
-    {/* </React.StrictMode> */}
-  </Provider>
+    <Provider store={store}>
+      {/* <React.StrictMode> */}
+        <App />
+      {/* </React.StrictMode> */}
+    </Provider>
   </ThemeProvider>
 );
 

@@ -3,7 +3,7 @@ export async function client(endpoint, { body, method, ...customConfig } = {}) {
     const headers = { 'Content-Type': 'application/json' }
   
     const config = {
-      method: body ? 'POST' : method,
+      method: method,
       ...customConfig,
       headers: {
         ...headers,
@@ -12,7 +12,7 @@ export async function client(endpoint, { body, method, ...customConfig } = {}) {
     }
   
     if (body) {
-      config.body = JSON.stringify(body)
+      config.body = JSON.stringify(body);
     }
   
     let data
@@ -38,9 +38,13 @@ export async function client(endpoint, { body, method, ...customConfig } = {}) {
   }
   
   client.post = function (endpoint, body, customConfig = {}) {
-    return client(endpoint, { ...customConfig, body })
+    return client(endpoint, { ...customConfig, body, method: 'POST' })
   }
   
   client.delete = function (endpoint, customConfig = {}) {
     return client(endpoint, { ...customConfig, method: 'DELETE' })
+  }
+
+  client.put = function (endpoint, body, customConfig = {}) {
+    return client(endpoint, { ...customConfig, body, method: 'PUT' })
   }

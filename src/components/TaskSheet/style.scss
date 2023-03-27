@@ -1,6 +1,7 @@
 .tasksheetContainer{
     height: 84%;
     margin: 20px;
+    overflow: auto;
 
     .loader{
         position: absolute;
